@@ -2,8 +2,8 @@ import argparse
 
 from logging import getLogger
 
-from .lib.logger import setup_logger
-from .config import Config
+from lib.logger import setup_logger
+from config import Config
 
 logger = getLogger(__name__)
 
@@ -38,14 +38,14 @@ def start():
     logger.info(f"config type: {config_type}")
 
     if args.cmd == "self":
-        from .worker import self_play
+        from worker import self_play
         return self_play.start(config)
     elif args.cmd == 'opt':
-        from .worker import optimize
+        from worker import optimize
         return optimize.start(config)
     elif args.cmd == 'eval':
-        from .worker import evaluate
+        from worker import evaluate
         return evaluate.start(config)
     elif args.cmd == 'play_gui':
-        from .play_game import gui
+        from play_game import gui
         return gui.start(config)

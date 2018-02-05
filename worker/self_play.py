@@ -99,7 +99,7 @@ class SelfPlayWorker:
         self.white.finish_game(-black_win)
 
     def load_model(self):
-        from connect4_zero.agent.model_connect4 import Connect4Model
+        from agent.model_connect4 import Connect4Model
         model = Connect4Model(self.config)
         if self.config.opts.new or not load_best_model_weight(model):
             model.build()

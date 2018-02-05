@@ -120,7 +120,7 @@ class OptimizeWorker:
         return len(self.dataset[0])
 
     def load_model(self):
-        from connect4_zero.agent.model_connect4 import Connect4Model
+        from agent.model_connect4 import Connect4Model
         model = Connect4Model(self.config)
         rc = self.config.resource
 
